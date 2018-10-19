@@ -1,0 +1,160 @@
+body{
+background: #E0EAFC;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+line-height: 1.3em;
+font-family: 'PT+Sans+Caption', sans-serif;
+}
+
+#forumicon{
+	font-weight: bold;
+	font-size: 2.2em;
+	padding:0 0.6em;
+	transition: 0.5s;
+	text-transform: uppercase;
+}
+.catheader{
+	margin:0 0;
+	border-radius: 20%;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+.ui .segment h3{
+	padding-bottom: 0.7em;
+	color:rgba(33, 133, 208, 1);
+}
+
+#forumicon:hover{
+	text-shadow: 0px 0px 8px rgba(255, 255, 255, 1);
+	color:rgba(255, 215, 0, 1);
+}
+.menu .item:hover{
+	text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.7);
+}
+.ui.input>input{
+	margin:3px;
+}
+.ui.header:first-child{
+	margin-top:-0.5em;
+	margin-bottom:-0.1em;
+	font-size: 3em;
+	letter-spacing: 3px;
+	margin-bottom: 10px;
+
+}
+.ui.basic.green.button, .ui.basic.green.buttons .button{
+	margin-top:1em;
+}
+.ui[class*="center aligned"].segment{
+	margin-top:3em;
+}
+.ui .segment{
+	height: 100%;
+	box-shadow: 0 0 6px 3px #f2f2f2;
+/*	background:rgba(207, 222, 243, 0.3)*/
+}
+.ui .segment h3{
+	text-transform: capitalize;
+	text-align: center;
+	font-size: 2em;
+}
+.ui.menu{
+	margin-top:0;
+}
+.ui.horizontal.divider{
+	margin-top:4em;
+}
+.threadbox{
+	background: #ECE9E6;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	border: 1px solid #D1D1D1;
+	border-radius: 5%;
+	height: 100%;
+	width: 100%;
+	padding:6px;
+	box-shadow: 0 0 8px #C9C9C9;
+}
+.threadbox:hover{
+	box-shadow: 0px 0px 15px rgb(33, 133, 208);;
+}
+.threadheader{
+font-size:0.6em;
+}
+.ui .comments{
+	border: 1px solid #D5D5D5;
+	padding: 5px 5px;
+}
+}
+.ui .comments:nth-of-type(even){
+	background: #EFEFEF;
+}
+.flashmessages{
+	width:90%;
+	left: 5%;
+}
+.ui.message{
+	font-size: 1.1em;
+}
+.ui.horizontal.divider{
+	margin-top:0.5em;
+}
+.ui.small.breadcrumb{
+	margin:0 16.2%;
+}
+.forumlist a{
+	color:inherit;
+	right:10%;
+	font-size: 1.2em;
+	margin-left:10%;
+	line-height: 1.4em;
+	font-weight: bold;
+}
+.forumlist a:hover 
+{
+     color:#00A0C6; 
+     text-decoration:none; 
+     cursor:pointer;  
+}
+.ui .segment h3 a{
+	color:inherit;
+	font-size: 1em;
+	transition: 1s;
+	font-weight: lighter;
+}
+.ui .segment h3 a:hover{
+     color:#00A0C6; 
+     text-decoration:none; 
+     cursor:pointer;  
+     font-size: 1.05em;
+}
+.ui .header{
+	text-align: center;
+}
+#usertitle{
+	margin:0 35%;
+}
+#commentcontent{
+	font-size:14px;
+}
+#commentauthor{
+	font-size:20px;
+}
+#threadAuthorAndComments{
+	font-size: 15px;
+	position:absolute;
+	bottom:15px;
+}
+.catpageforums{
+	text-align: center;
+	font-size: 1.4em;
+}
+.ui.raised.segment, .ui.raised.segments{
+	padding-bottom: 5em;
+}
+.ui.teal.button{
+	background: rgb(33, 133, 208);
+}
+.ui.teal.button:hover, .ui.teal.buttons .button:hover{
+	background: rgb(33, 133, 208);
+}

@@ -1,0 +1,20 @@
+<% include partials/header %>
+
+<div class="ui small breadcrumb">
+  <a href="/" class="section">HYPE</a>
+  <i class="right chevron icon divider"></i>
+  <a href="/index/<%=categorie._id%>" class="section"><%=categorie.title%></a>
+</div>
+
+<div class="ui raised very padded container segment">
+	<div class="ui sizer vertical segment">
+		<div class="ui large header centered"><%= categorie.title %></div>
+			<div class="ui inverted divider"></div>
+			<% categorie.forums.forEach(function(forum){%>
+				<p class='catpageforums'><a href="/index/<%=categorie._id%>/<%=forum._id%>"><%= forum.name %></a></p>
+			<% }); %>
+	</div>
+
+</div>
+
+<% include partials/footer %>

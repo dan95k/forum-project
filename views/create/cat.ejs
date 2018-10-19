@@ -1,0 +1,26 @@
+<% include ../partials/header %>
+
+<div class="ui raised very padded text container segment">
+	<div class="ui sizer vertical segment">
+  <h2 class="sub header">New Categorie</h2>
+  <div class="ui divider"></div>
+  <form class="ui form" action="/catcreate" method="post">
+		<div class="field">
+			<label>Categorie name</label>
+			<input type="text" name="name" required="true" placeholder="Insert categorie name here">
+		</div>
+		<div class="field">
+			<label>Categorie Icon</label>
+			<input type="text" name="icon" placeholder="Insert icon name here">
+			<label style='color:#A3A3A3'>In order to choose icon go <a href="https://semantic-ui.com/elements/icon.html">here</a> and copy the icon name</label>
+		</div>
+  <button class="positive ui button tiny ui button">Add categorie</button>
+</form>
+</div>
+</div>
+
+
+
+
+
+<% include ../partials/footer %>

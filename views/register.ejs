@@ -1,0 +1,19 @@
+<% include ./partials/header %>
+
+<div class="ui raised very padded text container segment center aligned">
+	<h1 class="ui header">Register</h1><br>
+	<form action="/register" method="post">
+		    <div class="ui small input"><input type="text" name="username" placeholder="username" required></div><br>
+		    <div class="ui small input"><input type="password" name="password" placeholder="password" required></div><br>
+		    <div class="ui small input"><input type="email" name="email" placeholder="email" required></div><br>
+		    <!-- is admin -->
+<!-- 		    <div class="ui small input"><input type="radio" name="isAdmin" value="false" checked> No Admin</div><br>
+			<div class="ui small input"><input type="radio" name="isAdmin" value="true"> Admin</div><br> -->
+			<!-- is admin -->
+		    <div class="ui small input"><input type="checkbox" required> Read and accepted the &nbsp;<a href="#">terms and conditions</a></div><br>
+		    <button class="ui green basic button small ui button">Sing Up</button>
+		    <button type="reset" class="ui red basic button small ui button">Reset</button>
+	</form>
+</div>
+
+<% include ./partials/footer %>

@@ -1,0 +1,26 @@
+<% include ../partials/header %>
+<div class="ui raised very padded text container segment">
+	<div class="ui sizer vertical segment">
+  <h2 class="sub header">New Forum</h2>
+  <div class="ui divider"></div>
+  <form class="ui form" action="/forumcreate" method="post">
+		<div class="field">
+			<input type="text" name="name" required="true" placeholder="forum name">
+		</div>
+
+		<div class="field">
+			<textarea name="description" placeholder="forum description"></textarea>
+		</div>
+		<h4 class="ui horizontal divider header"></i>Categorie</h4>
+	<div class="ui list">
+	<% categories.forEach(function(categorie){%>
+	<div class="item"><input type="radio" name="catId" required="true" value="<%=categorie._id%>">
+		<%=categorie.title%></div>
+	<%});%>
+	</div>
+  <button class="positive ui button tiny ui button">Add Forum</button>
+</form>
+</div>
+</div>
+
+<% include ../partials/footer %>

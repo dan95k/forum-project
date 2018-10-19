@@ -1,0 +1,20 @@
+<% include partials/header %>
+
+<div class="ui raised very padded text container segment">
+	<div class="ui sizer vertical segment">
+  <h2 class="huge header">Reset everything</h2>
+  <div class="ui divider"></div>
+  <p>Every piece of content this website has will get reset, including categories, forums and threads</p>
+  <form class="ui form" action="/reset" method="post">
+		<div class="field">
+			<label>i understand and wish to reset everything</label>
+			<input type="password" name="pass" required="true" placeholder="Enter secret code">
+		</div>
+		<p>To continue please enter the secret code</p>
+
+  <button class="negative ui button big ui right floated button">RESET</button>
+</form>
+</div>
+</div>
+
+<% include partials/footer %>

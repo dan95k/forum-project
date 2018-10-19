@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HYPE forum by Dan</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
+	<link href="/stylesheets/main.css" rel="stylesheet">
+  <script
+    type="text/javascript"
+    src="https://code.jquery.com/jquery-3.3.1.slim.js"
+    integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
+    crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption" rel="stylesheet">
+</head>
+<body>
+
+	<div class="ui blue inverted menu">
+  <a id="forumicon" href="/" class="item"><em>hype</em></a>
+  <a href="/" class="item"><i class="home icon"></i>Home</a>
+  <% if (currentUser && currentUser.isAdmin){%>
+            <div class="ui pointing dropdown link item">
+        <span class="text">Admin Options</span>
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          <div class="item">
+            <i class="dropdown icon"></i>
+            <span class="text">Categories</span>
+            <div class="menu">
+              <div class="item"><a style='color:inherit;' href="/catcreate">Create</a></div>
+              <div class="item"><a style='color:inherit;' href="/catdelete">Delete</a></div>
+            </div>
+          </div>
+            <div class="item">
+            <i class="dropdown icon"></i>
+            <span class="text">Forums</span>
+            <div class="menu">
+              <div class="item"><a style='color:inherit;'  href="/forumcreate">Create</a></div>
+              <div class="item"><a style='color:inherit;' href="/forumdelete">Delete</a></div>
+            </div>
+          </div>
+          <div class="item"><a style='color:inherit;' href="/addadmin">Add Admin</a></div>
+          <div class="item"><a style='color:inherit;' href="/reset">Forum reset</a></div>
+        </div>
+      </div>
+
+  <%}%>
+  <div class="right menu">
+    <% if (!currentUser){%>
+    <a href="/login" class="item"><i class="sign in alternate icon"></i>Sign In</a>
+    <a href="/register" class="item"><i class="user plus icon"></i>Register</a>
+    <% } else {%>
+    <a href="/users/<%=currentUser._id%>" class="item" data-tooltip="Click here to edit your info" data-position="bottom left">Signed As <%=currentUser.username%></a>
+    <a href="/logout" class="item"><i class="sign out alternate icon"></i>Log Out</a>
+    <%}%>
+  </div>
+</div>
+
+    <% if (error && error.length>0){ %>
+      <div class="ui red message flashmessages">
+        <i class="close icon"></i>
+        <div class="header">Oops! Something went wrong</div><p><%= error %></p></div>
+    <% } %>
+    <% if (success && success.length>0){ %>
+      <div class="ui green message flashmessages">
+        <i class="close icon"></i>
+        <div><%= success %></div></div>
+    <% } %>
+
+

@@ -1,0 +1,64 @@
+<% include partials/header %>
+
+		<div class="ui small breadcrumb">
+		  <a href="/" class="section">HYPE</a>
+		  <i class="right chevron icon divider"></i>
+		  <a href="/index/<%=categorie._id%>" class="section"><%=categorie.title%></a>
+		  <i class="right chevron icon divider"></i>
+		  <a href="/index/<%=categorie._id%>/<%=forum._id%>" class="section"><%=forum.name%></a>
+		  <i class="right chevron icon divider"></i>
+		  <a href="/index/<%=categorie._id%>/<%=forum._id%>/<%=thread._id%>" class="section"><%=thread.title%></a>
+		</div>
+
+<div class="ui raised very padded container segment">
+	<div class="ui sizer vertical segment">
+  	<div class="ui small header centered"><h1 class="threadheader"><%=thread.title%><h1></div>
+  	  	  <div class="ui teal horizontal label">Created By <%=thread.author%></div>
+  			<div class="ui teal horizontal label ui right floated button">Created at <%=thread.date.toDateString()%></div>
+  		<div class="ui segment"><p><%=thread.content%></p>
+  		<!-- delete & update buttons -->
+  		<% if (!currentUser){%>
+  		<%} else {%>
+  		<% if(currentUser._id.toString() === thread.authorId.toString() || currentUser.isAdmin === true){ %>
+            <form style="display: inline;" action="/index/<%=categorie._id%>/<%= forum._id %>/<%= thread._id %>?_method=delete" method="post">
+  			<button class="ui negative basic button mini ui button">Delete Thread</button>
+            </form>
+            <button class="ui primary basic button mini ui button "><a href="/index/<%=categorie._id%>/<%=forum._id%>/<%=thread._id%>/edit">Edit Thread</a></button>
+  		<% }} %>
+  		</div>
+		<!-- delete & update buttons -->
+  		 <h4 class="ui horizontal divider header">Comments</h4>
+  		 <div class="=ui container commentsbox">
+  		<% comments.forEach(function(comment){ %>
+				<div class="ui info message ui mini message">
+				  <div id="commentauthor"><%=comment.author%></div>
+					<p id="commentcontent"><%=comment.content%></p>
+				</div>
+  		<% }); %>
+  		</div>
+ 		 <div class="ui hidden divider"></div>
+ 		 <!-- Comment adding -->
+ 		   		 <h4 class="ui horizontal divider header">Add Comment</h4>
+ 		   		 <% if (!currentUser){%>
+ 		   		 <div class="ui info message">
+  				<p style="text-align: center">You need to be <a href="/login">log in</a> or <a href="/register">register</a> in order to add comments</p>
+				</div>
+ 		   		 <%} else {%>
+		      <form action="/index/<%=categorie._id%>/<%=forum._id%>/<%=thread._id%>" method="post" class="ui reply form">
+		      	<h4 style="color:#A3A2A2">Comment by: <%=currentUser.username%></h4>
+		        <div class="field">
+		          <textarea required name="comment[content]" placeholder="Your message here"></textarea>
+		        </div>
+		        <button class="ui primary submit labeled icon button"><i class="icon edit"></i> Add Reply</button>
+		      </form>
+		      <%};%>
+		 <!-- Comment adding -->
+		    </div>
+		  </div>
+		</div>
+  	</div>
+</div>
+
+
+
+<% include partials/footer %>

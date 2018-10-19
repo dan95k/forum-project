@@ -1,0 +1,28 @@
+<% include ../partials/header %>
+<div class="ui raised very padded text container segment">
+	<h1 class="ui header">New Thread Creation</h1>
+	<div class="ui section divider"></div>
+				<form method="post" action="/index/<%=catId%>/<%=forumId%>" class="ui form">
+				  	<div class="field">
+					    	<label>Title</label>
+					    	<input name="thread[title]" type="text" placeholder="Thread Title" required>
+				  	</div>
+					<div class="field">
+							<label>Text</label>
+							<textarea name="thread[content]" placeholder="Your Content..." required></textarea>
+					</div>
+							<div style="text-align: center">
+						 	<div class="ui buttons">
+		  					<button type="reset" class="ui red button">Reset</button>
+		  					<div class="or"></div>
+		  					<button type="submit" class="ui positive button">Post</button>
+							</div>
+							</div>
+				</form>
+</div>
+
+
+
+
+
+<% include ../partials/footer %>

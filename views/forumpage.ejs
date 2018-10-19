@@ -1,0 +1,46 @@
+<% include partials/header %>
+
+
+
+		<div class="ui small breadcrumb">
+		  <a href="/" class="section">HYPE</a>
+		  <i class="right chevron icon divider"></i>
+		  <a href="/index/<%=categorie._id%>" class="section"><%=categorie.title%></a>
+		  <i class="right chevron icon divider"></i>
+		  <a href="/index/<%=categorie._id%>/<%=forum._id%>" class="section"><%=forum.name%></a>
+		</div>
+
+<div class="ui raised very padded container segment">
+	<div class="ui medium header centered">Welcome to <%=forum.name%> Forum</div>
+
+	<p><%=forum.description%></p>
+		<h4 class="ui horizontal divider">Threads</h4>
+					<!-- new thread button -->
+					<div>
+					<a href="/index/<%=categorie._id%>/<%=forum._id%>/newthread"> 
+					<div class="ui vertical animated button ui right floated button ui teal button mini ui button" tabindex="0">
+					<div class="hidden content">Thread</div>
+					<div class="visible content">New</div>
+					</div></a>
+					</div>
+					<!-- new thread button -->
+	<div class="ui four column doubling stackable grid container">
+		<% threads.forEach(function(thread){ %>
+
+				 <div class="column">
+				 	<a style="color:inherit" href="/index/<%=categorie._id%>/<%=forum._id%>/<%=thread._id%>">
+				 	<div class="threadbox">
+	    			<h3><%=thread.title.substring(0,24)%></h3>
+	    			<p><%=thread.content.substring(0,100)%>...</p>
+	    			<div id='threadAuthorAndComments'>
+	    			<i class="pencil alternate icon"></i><em><%=thread.author.substring(0,24)%></em> &nbsp &nbsp &nbsp &nbsp
+	    			<i class="sticky note outline icon"></i> <%=thread.comments.length%>
+	    			</div>
+	    			</div>
+	    			</a>
+	 			 </div>
+		<% }); %>
+	</div>
+</div>
+
+<% include partials/footer %>

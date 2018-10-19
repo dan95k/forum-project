@@ -1,0 +1,19 @@
+<% include partials/header %>
+<div class="ui raised very padded container segment">
+	<h2 id='usertitle' class="ui header"><i class="settings icon"></i><div class="content">Account Settings<div class="sub header">Edit your information</div>
+  </div></h2>
+  			<form action='/userupdate?_method=put' method='post'>
+				<div class="ui form ui center aligned segment">
+				  <div class="fields">
+				   	<div class="sixteen wide field">
+				    <label>Email</label>
+				    <input name='user[email]' type="email" value="<%=user.email%>">
+				    </div>
+				  </div>
+				  <button class="positive ui button">Save Changes</button>
+				</div>
+			</form>
+
+</div>
+
+<% include partials/footer %>

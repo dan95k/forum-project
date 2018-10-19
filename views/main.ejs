@@ -1,0 +1,18 @@
+<% include partials/header %>
+
+<div class="ui raised very padded container segment">
+<div class="ui four column grid">
+ 	<% categories.forEach(function(categorie){%>
+ 		<div class="column">
+ 			<div class="ui segment">
+			 	<h3 class='catheader'><a href="/index/<%=categorie._id%>"><i class="<%=categorie.icon%> icon"></i> <%=categorie.title%></a></h3>
+			 <% categorie.forums.forEach(function(forum){ %>
+ 				<div class="forumlist"><a href="/index/<%=categorie._id%>/<%=forum._id%>"><%=forum.name.substring(0,22)%></a></div>
+ 			<% }); %>
+ 		</div>
+ 			</div>
+	<% });%>
+</div>
+</div>
+
+<% include partials/footer %>
